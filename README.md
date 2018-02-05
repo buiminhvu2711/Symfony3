@@ -20,3 +20,15 @@ function myFunction2(){
 window.onload = function(){
   // your code here
 };
+# Mouse Enter and Mouse Out (JavaScript and JQuery)
+1.JavaScript
+<div onmousemove="myFunction()" onmouseout="clearCoor()"></div>
+2. JQuery
+$(document).ready(function(){
+    $("p").mouseenter(function(){
+        $("p").css("background-color", "yellow");
+    });
+    $("p").mouseleave(function(){
+        $("p").css("background-color", "lightgray");
+    });
+});
