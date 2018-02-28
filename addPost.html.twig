@@ -1,0 +1,172 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <style>
+        body{
+            background-color: #fff;
+            overflow: scroll;
+        }
+    </style>
+    <div class="topPageAddPost" >
+        <div class="logo_addpost" align="center">
+            <a href={{ path ("setting") }}><img src="./image/back_white.svg" /></a>
+            <img src="./image/logo.svg" />
+            <button><img src="./image/navi/write_white.svg" /></button>
+        </div>
+    </div>
+    <div class="insertPost">   
+        <div id="hashtag">
+            <div id="item-hashadded" ></div>
+            <div id="item-hashadded-2"></div>  
+            <button id="btnhashtag" onclick="myClick()">カテゴリーを選択＋</button>       
+        </div>
+        <div class="info-post">
+            <div id="textPost" contenteditable="true"></div>   
+        </div>
+        <div class="modal fade" id="listhastag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="width: 92%;margin: 5%;">
+                <div class="mydetailmodal-content">
+                    <div class="mydetailModal-body">
+                        <div align="center">
+                            <h5>最大3つまで</h5>
+                        </div>                 
+                        <div class="btnhastag">
+                            <button value="フード＆ドリンク">フード＆ドリンク</button>
+                            <button value="旅行">旅行</button>
+                            <button value="ビジネス">ビジネス</button>
+                            <button value="娯楽">娯楽</button>
+                            <button value="ファッション">ファッション</button>
+                            <button value="テクノロジー">テクノロジー</button>
+                            <button value="健康">健康</button>
+                            <button value="ファイナンス">ファイナンス</button>
+                            <button value="教育">教育</button>
+                            <button value="イデア">イデア</button>
+                        </div>
+                    </div>
+                    <div class=" mydetailModal-footer">
+                        <div class="frame-close" align="center">
+                            <button id="close" type="button" data-dismiss="modal" align="center">X</button>
+                        </div>                        
+                        <div class="frame-send">
+                            <button id="send" type="button" data-dismiss="modal" align="center">報告する</button>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#item-hashadded').css({"width": "100%", "display": "inline"});
+            $('#item-hashadded-2').css({"width": "100%", "display": "inline"}); 
+                    });
+                    $(".btnhastag button").addClass("first-btnhastag");
+                    var arraytag = new Array();
+                    $(".btnhastag button").click(function ()
+                    {
+                        var s = $(this).attr('class');
+                        var val = $(this).val();
+                        console.log("Giá trị truyền vào:" + val);
+                        if (arraytag.length == 3)
+                        {
+                            if (s == "first-btnhastag")
+                            {
+                                alert("最大3つまで");
+                            } else
+                            {
+                                var a = arraytag.pop();
+                                console.log(a);
+                                $(this).toggleClass("first-btnhastag");
+                                $(this).removeClass("hover-btnhastag");
+                                console.log("trường hợp 3.2");
+                            }
+
+                        } else
+                        {
+                            if (s == "first-btnhastag")
+                            {
+                                arraytag.push(val);
+                                $(this).toggleClass("hover-btnhastag");
+                                $(this).removeClass("first-btnhastag");
+                                console.log("trường hợp 2");
+                            } else
+                            {
+                                $(this).toggleClass("first-btnhastag");
+                                $(this).removeClass("hover-btnhastag");
+                                arraytag.splice($.inArray(val, arraytag), 1);
+                                console.log("trường hợp 3.1");
+                            }
+                        }
+                        console.log("Độ dài mới của mảng:" + arraytag.length);
+                    });
+                    $(".frame-send button").click(function () {
+                        var count = $(".hashtag-added").length;
+                        console.log(count);
+                        if (count == 0 && arraytag.length > 0)
+                        {
+                            for (var i = 0; i < arraytag.length; i++)
+                            {
+                                var value = arraytag[i];
+                                
+                                $("#item-hashadded").append("<div class='hashtag-added'><a value="+value+">" + value + "</a><button value=" + value + ">X</button></div>");
+                            }
+                            $('.btnhastag button').addClass("first-btnhastag");
+                            $('.btnhastag button').removeClass("hover-btnhastag");
+                            arraytag = [];
+                            console.log("trường hợp 4");
+                        } else
+                        {
+                            if ($("#item-hashadded-2 .hashtag-added").length == 3)
+                            {
+                                $("#item-hashadded-2 .hashtag-added").remove();
+                            }
+                            if (arraytag.length == count && arraytag.length > 0)
+                            {
+                                for (var i = 0; i < arraytag.length; i++)
+                                {
+                                    var value = arraytag[i];
+                                    $("#item-hashadded").append("<div class='hashtag-added'><a value="+value+">" + value + "</a><button value=" + value + ">X</button></div>");
+                                }
+                                $("#item-hashadded-2").replaceAll("#item-hashadded");
+                                $('.btnhastag button').removeClass("hover-btnhastag");
+                                $('.btnhastag button').addClass("first-btnhastag");
+                                arraytag = [];
+                                console.log("trường hợp 5");
+                            } else
+                            {
+                                $("#item-hashadded").remove();
+                                $("#item-hashadded-2").remove();
+                                $("#btnhashtag").before("<div id='item-hashadded'></div><div id='item-hashadded-2'></div>");
+                                for (var i = 0; i < arraytag.length; i++)
+                                {
+                                    var value = arraytag[i];
+                                    $("#item-hashadded").append("<div class='hashtag-added'><a value="+value+">" + value + "</a><button value=" + value + ">X</button></div>");
+                                }
+                                $('.btnhastag button').removeClass("hover-btnhastag");
+                                $('.btnhastag button').addClass("first-btnhastag");
+                                arraytag = [];
+                                console.log("trường hợp count và độ dài mảng không bằng nhau !");
+                            }
+                        }
+                    });
+                    function myClick() {
+                        $("#listhastag").modal("show");
+                    }
+                    $(document).on("click",".hashtag-added button", function () {
+                        var c=document.getElementsByClassName("hashtag-added");
+                        console.log(c);
+                        var value=$(this).attr('value');
+                        console.log(value);
+                        for(var i=0;i<c.length;i++)
+                        {
+                                var a= $(c[i]).find('a').text();
+                                console.log(a);
+                                if(a==value)
+                                {
+                                   $(c[i]).remove();
+                                   break;
+                                }
+                        }
+                    });
+    </script>
+{% endblock %}

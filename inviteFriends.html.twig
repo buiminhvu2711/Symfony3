@@ -1,0 +1,27 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+       body{
+                background-color: #cecece;
+                overflow: scroll;
+        }
+</style>
+<div class="topPageAuthentication" >
+        <div class="logo_authentication" >
+                <a href={{ path ("setting") }}><img src="./image/back_white.svg" /></a>
+                <h2>友達を招待</h2>
+        </div>
+</div>
+<div class="frame-inviteFriend">
+    <div class="button-invite">
+        <button id="facebook">facebookで招待</button>
+    </div>
+        <div class="button-invite">
+        <button id="twitter">twitterで招待</button>
+    </div>  
+        <div class="button-invite2">
+        <button id="email">mailで招待</button>
+    </div>  
+</div>               
+{% endblock %}

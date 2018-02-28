@@ -1,0 +1,127 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+       body{
+                background-color: #cecece;
+                overflow: scroll;
+        }
+</style>
+<div class="topPageFind" >
+                <div class="logo_find" >
+                    <a href={{ path ("pageMyTip") }}><img src="./image/back_white.svg" /></a>
+                    <img src="./image/logo.svg" />
+                </div>
+                <div class="inputFind" onmousemove="eventbtnClear()" onmouseout="eventbtnClear_2()" id="eveinput" align="center">
+                    <input id="textSearch" type="text" placeholder="検索" value=""/>
+                    <button id="btnSearch" onclick="clearText()">X</button>
+                </div>
+                 <script>    
+                function eventbtnClear() {
+                            var t = document.getElementById("textSearch").value.length;
+                            if(t==0)
+                            {
+                                $("#btnSearch").css({"display":"none"});
+                            }
+                            else
+                            {
+                                $("#btnSearch").css({"display":"inline"});
+                                return;
+                            }
+                            var re=setTimeout(eventbtnClear,500);
+                        }                      
+                function eventbtnClear_2() {
+                            var t = document.getElementById("textSearch").value.length;
+                            window.console.log(t);
+                            if(t==0)
+                            {
+                                $("#btnSearch").css({"display":"none"});
+                            }
+                            else
+                            {
+                                $("#btnSearch").css({"display":"none"});
+                            }
+                        }                      
+                $(document).ready(function (){
+                                eventbtnClear_2();
+                        });
+                </script>
+</div>
+<div class="tabFollow">
+        <button class="tablink" onclick="openPageFollow(event, 'follower')">すべて</button>
+        <button class="tablink" onclick="openPageFollow(event, 'follow')">ユーザー</button>                      
+</div>
+<div id='follower' class="myTabcontent">
+    <div class="item-follow" name="Alex" >
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>Alex</p>
+        <button>フォロー中</button>
+    </div>
+    <div class="item-follow" name="Rich" >
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>Rich</p>
+        <button>フォロー中</button>
+    </div>
+    <div class="item-follow" name="Tom">
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>Tom</p>
+        <button>フォロー中</button>
+    </div>
+        <div class="item-follow" name="Tom">
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>KitKat</p>
+        <button>フォロー中</button>
+    </div>
+    <div class="item-follow" name="Tom">
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>TikRam</p>
+        <button>フォロー中</button>
+    </div>
+</div>
+<div id='follow' class="myTabcontent">                    
+</div>
+<script>
+$(document).ready(function(){
+        $("#textSearch").on("keyup", function() {
+        var value = $(this).val().toUpperCase();
+        console.log(value);
+        var test=document.getElementsByClassName("item-follow");
+        console.log(test);      
+        for (var i = 0; i < test.length; i++) {
+            var a=$(test[i]).find("p").text();
+            if(a.toUpperCase().indexOf(value)>-1)
+            {
+                $(test[i]).css("display","inline-block");
+            }
+            else
+            {
+                $(test[i]).css("display","none");
+            }           
+    }
+  });
+});
+function openPageFollow(evt, namePage) {
+    var i, tabcontent, tablink;
+    tabcontent = document.getElementsByClassName("myTabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablink = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablink.length; i++) {
+        tablink[i].className = tablink[i].className.replace(" active", "");
+    }
+    document.getElementById(namePage).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+{% endblock %}

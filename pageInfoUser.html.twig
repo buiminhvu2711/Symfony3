@@ -1,0 +1,42 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+body
+ {
+        background-color: #efefef;
+        width: 100%;
+ }   
+</style>
+<div class="myTopInfo animated fadeInLeft" >
+            <a href={{ path ("pageUser") }}><i class="fa fa-chevron-left" ></i></a>
+            <img src="./image/logo.svg" />
+</div>
+<div class="avatar-info" align="center">
+        <img src="https://data.tokyogirlsupdate.com/wp/wp-content/uploads/2014/12/img_MariyaNishiuchi1.jpg" />
+        <button>写真を変更</button>
+</div>
+<div class="tagBreak">
+    <p>プロフィール</p>         
+</div>
+            <div class="info-profile">
+                <div class="name-profile">
+                        <img src="./image/navi/name_red.svg" />
+                        <input type="text" value="加藤花子" />
+                </div>
+                <div class="email-profile">
+                        <img src="./image/navi/email_red.svg" />
+                        <input type="email" value="hanako@tippin.com" />
+                </div>                
+            </div>
+<div class="tagBreak">
+    <p>自己紹介</p>         
+</div>
+            <div class="self-introduction">
+                <p>プログラマー歴3年。趣味はサーフィン、食べ歩き。息子2人子育て中。2歳と6歳の元気な男の子です。波乱万丈な日々を奮闘しています.</p>
+            </div>
+            <div class="button-save" align="center">
+                <button>保存</button>
+            </div>            
+{% endblock %}   

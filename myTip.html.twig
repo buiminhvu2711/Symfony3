@@ -1,0 +1,135 @@
+{# empty Twig template #}
+{#{% extends 'base.html.twig' %}#}
+
+{% block body %}
+<style>
+body
+ {
+        background-color: #fff;
+        width: 100%;
+ } 
+ .cls-34
+ {
+        stroke: #a62224;
+        stroke-width: 2px;
+        stroke-miterlimit: 10;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        fill: none;
+ }
+</style>
+<div class="myTip animated fadeInLeft" >
+            <a href={{ path ("pageUser") }}><img src="./image/back_white.svg" /></i></a>
+            <h2>My TIP</h2>
+</div>
+            <div class="infoTip" align="center">
+                <div class="amountTip">
+                    <img src="./image/tippin.svg" />
+                    <h3>1,350</h3>
+                    <p>1投げ錢 = 3,000TIP</p>
+                </div>
+                <button>交換</button>
+            </div>
+            <div class="myTabTip">
+                <button class="tablinks" onclick="openPage(event, 'all')">すべて</button>
+                <button class="tablinks" onclick="openPage(event, 'acceptance')">受け取り</button>
+                <button class="tablinks" onclick="openPage(event, 'feed')">送り</button>
+            </div>
+            <div id="all" class="myTabcontent">
+                <div class="allTip">
+                    <div class="tip">
+                        <div class="imgTip">
+                            <img id="img-avatar" src="https://sociorocketnewsen.files.wordpress.com/2014/07/macopic.jpg?w=580&h=434"  />
+                            <img id="img-tip" src="./image/tip/tip_bronze.svg" />
+                        </div>
+                        <div class="info-tip">
+                            <span>
+                                <img src="./image/up-arrow.svg" />
+                            </span>
+                            <p>三谷由里</p>
+                            <p>さんがあなたの投稿に3TIPを送り</p>
+                            <p>ました！</p><br>
+                            <p id="2">3分前</p>                          
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <div class="imgTip">
+                            <img id="img-avatar" src="https://i.pinimg.com/736x/0f/3e/26/0f3e26c59b1cb3ee5d90e82128510ca2--voice-actor-singer.jpg"  />
+                            <img id="img-tip" src="./image/tip/tip_gold.svg" />
+                        </div>
+                        <div class="info-tip">
+                            <p>三谷由里</p>
+                            <p>さんがあなたの投稿に3TIPを送り</p>
+                            <p>ました！</p><br>
+                            <p>3分前</p>                          
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <div class="imgTip">
+                            <img id="img-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn3sh7Y9hYaHgIbGob7Jed0TbF_U6P4z376gc2P6lpaYGLUZy-"  />
+                            <img id="img-tip" src="./image/tip/tip_silver.svg" />
+                        </div>
+                        <div class="info-tip">
+                            <p >三谷由里</p>
+                            <p id="">さんがあなたの投稿に3TIPを送り</p>
+                            <p id="">ました！</p><br>
+                            <p id="2">3分前</p>                          
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <div class="imgTip">
+                            <img id="img-avatar" src="https://sociorocketnewsen.files.wordpress.com/2014/07/macopic.jpg?w=580&h=434"  />
+                            <img id="img-tip" src="./image/tip/tip_bronze.svg" />
+                        </div>
+                        <div class="info-tip">
+                            <span>
+                                <img src="./image/up-arrow.svg" />
+                            </span>
+                            <p>三谷由里</p>
+                            <p>さんがあなたの投稿に3TIPを送り</p>
+                            <p>ました！</p><br>
+                            <p id="2">3分前</p>                          
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <div class="imgTip">
+                            <img id="img-avatar" src="https://sociorocketnewsen.files.wordpress.com/2014/07/macopic.jpg?w=580&h=434"  />
+                            <img id="img-tip" src="./image/tip/tip_bronze.svg" />
+                        </div>
+                        <div class="info-tip">
+                            <span>
+                                <img src="./image/up-arrow.svg" />
+                            </span>
+                            <p>三谷由里</p>
+                            <p>さんがあなたの投稿に3TIPを送り</p>
+                            <p>ました！</p><br>
+                            <p id="2">3分前</p>                          
+                        </div>
+                    </div>
+
+
+                 
+                </div>
+            </div>
+            <div id="acceptance" class="myTabcontent">
+                <h1>tab 2</h1>
+            </div>
+            <div id="feed" class="myTabcontent">
+                <h1>tab 3</h1>
+            </div>
+<script>
+function openPage(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("myTabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+{% endblock %}

@@ -1,0 +1,67 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+       body{
+                background-color: #cecece;
+                overflow: scroll;
+        }
+</style>
+<div class="topPageFind" >
+        <div class="logo_find" >
+                <a href={{ path ("pageUser") }}><img src="./image/back_white.svg" /></a>
+                <img src="./image/logo.svg" />
+        </div>
+</div>
+<div class="tagBreak">
+    <p>アカウント</p>         
+</div>
+<div class="frameSetting">
+        <div class="twoAuthentication">
+                <a href={{ path ("pageAuthentication") }}>二段階認証<img src="./image/back_red.svg" /></a>              
+        </div>
+        <div class="twoAuthentication">
+                <a href={{ path ("blockList") }}>ブロック一覧<img src="./image/back_red.svg" /></a>
+        </div>
+        <div class="twoAuthentication">
+                <a href={{ path ("changePhoneNumber") }}>電話番号を変更<img src="./image/back_red.svg" /></a>
+        </div>
+        <div class="changePass">
+                <a href={{ path ("changePassword") }}>パスワードを変更<img src="./image/back_red.svg" /></a>
+        </div>
+</div>
+<div class="tagBreak">
+    <p>通知設定</p>         
+</div>
+<div class="frameSetting">
+    <div class="pushNotification">
+        <p>プッシュ通知</p>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+</label>
+    </div>
+</div>
+<div class="tagBreak">
+    <p>友達を招待</p>         
+</div>
+        <div class="frameSetting">
+            <div class="changePass">
+        <a href={{ path ("inviteFriends") }}>友達を招待<img src="./image/back_red.svg" /></a>              
+            </div>
+        </div>
+<div class="tagBreak">
+    <p>情報</p>         
+</div>
+<div class="frameSetting">
+                <div class="twoAuthentication">
+                <a href="#">規約とプライバシー<img src="./image/back_red.svg" /></a>
+        </div>
+        <div class="changePass">    
+        <a href="">エラー報告<img src="./image/back_red.svg" /></a>              
+            </div>
+</div>
+<div class="btnSetting" align="center">
+        <button>ログアウト</button>
+</div>
+{% endblock %}

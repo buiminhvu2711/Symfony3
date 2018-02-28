@@ -1,0 +1,40 @@
+{# empty Twig template #}
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+       body{
+                background-color: #cecece;
+                overflow: scroll;
+        }
+</style>
+<div class="topPageAuthentication" >
+        <div class="logo_authentication" >
+                <a href={{ path ("setting") }}><img src="./image/back_white.svg" /></a>
+                <h2>二段階認証</h2>
+        </div>
+</div>
+<div class="frameAuthentication">
+    <div class="authentication">
+        <p>二段階認証</p>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+<div class="tagBreak">
+    <p>QRコード</p>         
+</div>
+                <div class="frameQR" align="center">
+                    <p>
+                        Google Authenticator などの認証コード生成用
+                        のモバイルアプリでQRコードを読み取り、ログ
+                        イン時の本人確認が必要な時にセキュリティコー
+                        ドを送信されます。
+                    </p>
+                    <a rel='nofollow' href='http://www.qrcode-generator.de' border='0' style='cursor:default'>                    
+                    </a>
+                    <img src='https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2Flocalhost%2Fmy_project%2Fweb%2Fapp_dev.php%2FpageAuthentication&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
+                </div>
+{% endblock %}

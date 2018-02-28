@@ -1,0 +1,78 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="swiper-container animated slideInUp">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="./image/slide01.jpg" alt="Chicago" style="width: 100%">
+            <div class="myCaption">
+                <div class="logo">
+                <svg  viewBox="-1979 -664 60.071 30" class="animated jackInTheBox ">
+                <defs>
+                <style>
+                        .cls-1 {
+                        fill: #fff;
+                 }
+                </style>
+                </defs>
+                <g id="グループ化_177" data-name="グループ化 177" transform="translate(-1979 -664)">
+                <path id="パス_459" data-name="パス 459" class="cls-1" d="M49.065,131.7H46.453v4.588H42.5V138.9h3.953v9.176h2.612V138.9h3.882v-2.612H49.065Z" transform="translate(-42.5 -129.794)"/>
+                <path id="パス_460" data-name="パス 460" class="cls-1" d="M62.006,129a1.807,1.807,0,0,0-1.341.565,1.928,1.928,0,0,0-.565,1.341,2.1,2.1,0,0,0,.565,1.412,1.971,1.971,0,0,0,1.412.565,1.807,1.807,0,0,0,1.341-.565,1.971,1.971,0,0,0,.565-1.412,1.807,1.807,0,0,0-.565-1.341A1.721,1.721,0,0,0,62.006,129Z" transform="translate(-47.676 -129)"/>
+                <rect id="長方形_279" data-name="長方形 279" class="cls-1" width="2.612" height="11.718" transform="translate(13.059 6.494)"/>
+                <path id="パス_461" data-name="パス 461" class="cls-1" d="M86.682,138.2a5.557,5.557,0,0,0-2.612.706V138.2H81.459v15.671a5.224,5.224,0,0,1-10.447,0v-5.929a5.341,5.341,0,0,0,2.612.706,5.224,5.224,0,1,0,0-10.447,5.558,5.558,0,0,0-2.612.706V138.2H68.4v15.671a7.835,7.835,0,1,0,15.671,0v-5.929a5.341,5.341,0,0,0,2.612.706,5.224,5.224,0,1,0,0-10.447Zm-13.059,2.612a2.612,2.612,0,1,1-2.612,2.612A2.652,2.652,0,0,1,73.624,140.812Zm13.059,5.224a2.612,2.612,0,1,1,2.612-2.612A2.606,2.606,0,0,1,86.682,146.035Z" transform="translate(-50.118 -131.706)"/>
+                <rect id="長方形_280" data-name="長方形 280" class="cls-1" width="2.612" height="11.718" transform="translate(44.4 6.494)"/>
+                <path id="パス_462" data-name="パス 462" class="cls-1" d="M106.406,129a1.807,1.807,0,0,0-1.341.565,1.928,1.928,0,0,0-.565,1.341,2.1,2.1,0,0,0,.565,1.412,1.971,1.971,0,0,0,1.412.565,1.807,1.807,0,0,0,1.341-.565,1.971,1.971,0,0,0,.565-1.412A1.929,1.929,0,0,0,106.406,129Z" transform="translate(-60.735 -129)"/>
+                <path id="パス_463" data-name="パス 463" class="cls-1" d="M123.247,143.424a4.753,4.753,0,0,0-1.553-3.671,5.126,5.126,0,0,0-3.671-1.553,4.682,4.682,0,0,0-2.612.706V138.2H112.8v11.718h2.612v-6.494h0a2.612,2.612,0,0,1,5.224,0h0v6.494h2.612v-6.494Z" transform="translate(-63.176 -131.706)"/>
+                </g>
+                </svg>
+                </div>
+                <div class="info">
+                        <h2>デジタル上に自分の獲得した</h2>
+                        <h2>信用・信頼のログを残して活用する</h2>
+                        <h3>あなたのソーシャルキャピタルを獲得して 使えるサービス</h3>
+                </div>
+                
+            </div>
+        </div>
+        <div class="swiper-slide ">
+            <img src="./image/slide02.jpg" alt="Chicago" style="width: 100%">
+            <div class="myCaption">              
+                <h2>誰かのためになる、</h2>
+                <h2>役に立つ、貢献する。</h2>
+                <h3>日常のあなたの活動や行いで_ソーシャルキャピタルを獲得してデジタル通貨へ_交換する</h3>
+            </div>
+        </div>
+        <div class="swiper-slide ">
+            <img src="./image/slide03.jpg" alt="Chicago" style="width: 100%">
+            <div class="myCaption">              
+                <h2>リアル仮想通貨と交換</h2>
+                <h3>獲得したデジタル通貨の一部を仮想通貨と交換して</h3>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination "></div>
+          <div class="container">
+        <div class="myButton" align="center">
+                <a href={{ path ("login_enter") }} >ログイン</a>
+                <a href={{ path ("register") }}>登録する</a>
+        </div>
+    </div>
+</div>
+
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+{#  <script>
+    function zoom() {
+        var g = document.getElementById('inner');
+        g.setAttribute("transform", "scale(1)");
+    }
+    zoom();
+</script>#}
+{% endblock %}

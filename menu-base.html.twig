@@ -1,0 +1,94 @@
+{# empty Twig template #}
+<base href="{{asset('')}}">
+{% block footer %}
+<div class="myBottomTab" >
+                <button  onclick="openPageButton('0')"><img id="0" src="./image/navi/headline.svg"></button>
+                <button  onclick="openPageButton('1') "><img id="1" src="./image/navi/timeline.svg"></button>
+                <button onclick="openPageButton('2')"><img id="2" src="./image/navi/write.svg"></button>
+                <button  onclick="openPageButton('3')"><img id="3" src="./image/navi/notification.svg"></button>
+                <p id="amountNofi"></p> 
+                <button   onclick="openPageButton('4')"><img id="4" src="./image/navi/profile.svg"></button>
+</div>
+<script>
+        var src = ["./image/navi/headline_selected.svg",
+        "./image/navi/timeline_selected.svg",
+        "./image/navi/write.svg",
+        "./image/navi/notification_selected.svg",
+        "./image/navi/profile_selected.svg",
+        ];
+            var srcFirst = ["./image/navi/headline.svg",
+        "./image/navi/timeline.svg",
+        "./image/navi/write.svg",
+        "./image/navi/notification.svg",
+        "./image/navi/profile.svg",
+        ];
+        var page=['{{ path ( "pageFind")}}','{{ path ( "newFeedHome")}}','{{path ( "addPost")}}','{{path ( "noficationPage")}}','{{ path ( "pageUser")}}',];
+function firstLoaded()
+{
+
+        var urlPath= window.location.pathname;
+        console.log(urlPath);
+        for(var i=0;i<page.length;i++)
+        {
+            console.log(page[i]);
+            if(urlPath == page[i])
+            {
+                 document.getElementById(i).src = src[i];
+                 break;
+            }
+            else
+            {
+                document.getElementById(i).src = srcFirst[i];
+            }
+        }
+}
+firstLoaded();
+function openPageButton(id)
+{
+    var i;
+    for(i=0;i<src.length;i++)
+    {
+        if(i==id)
+        {
+                document.getElementById(id).src = src[id];
+                var test = document.getElementById(id);
+                test.src = src[id];
+                {#window.console.log(id);
+                window.console.log(test);#}
+                window.location.replace(page[i]);
+                {#window.location.href=page[i];#}
+{#                $("body").load(page[i]);#}
+        }
+        else
+        {
+                document.getElementById(i).src = srcFirst[i];
+        }
+    }
+}
+    $( document ).ready(function() {
+        var nofi= document.getElementsByClassName("tip-nofi").length;
+        document.getElementById("amountNofi").innerHTML=nofi;
+        if(nofi == 0)
+        {
+                $("#amountNofi").hide();
+        }
+        });
+    $( document ).ready(function() {
+        var count = 1;
+        var nofi= document.getElementsByClassName("tip-nofi").length;
+        $(".tip-nofi").click(function(){
+            nofi = nofi-count;
+            console.log(count);
+            document.getElementById("amountNofi").innerHTML=nofi;
+            $(this).css("background-color", "#efefef");
+            if(nofi == 0)
+            {
+                $("#amountNofi").hide();
+            }
+        });
+});
+</script>
+{% endblock %}
+
+
+  

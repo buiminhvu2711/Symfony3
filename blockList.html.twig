@@ -1,0 +1,39 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+       body{
+                background-color: #cecece;
+                overflow: scroll;
+        }
+</style>
+<div class="topPageAuthentication" >
+        <div class="logo_authentication" >
+                <a href={{ path ("setting") }}><img src="./image/back_white.svg" /></a>
+                <h2>ブロック一覧</h2>
+        </div>
+</div>
+<div class="frame-list">
+        <div class="item-follow" name="Rich" >
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>西尾直樹</p>
+        <button>ブロックを解除</button>
+        </div>
+        <div class="item-follow" name="Rich" >
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>杉山清</p>
+        <button>ブロックを解除</button>
+        </div>
+            <div class="item-follow" name="Rich" >
+        <div class="frame-img" id="itemf">
+            <img src="./image/defult.svg" />
+        </div>     
+        <p>秋山博子</p>
+        <button>ブロックを解除</button>
+    </div>
+</div>    
+{% endblock %}

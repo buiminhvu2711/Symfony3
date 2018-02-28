@@ -1,0 +1,226 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+       body{
+                background-color: #cecece;
+        }
+</style>
+<div class="topPageUser" align="center">
+          <a href={{ path ("setting") }}>
+                <img src="./image/setting.svg"/>
+          </a>
+                <div class="logo_user">
+                <svg  viewBox="-1979 -664 60.071 30">
+                <defs>
+                <style>
+                        .cls-1 {
+                        fill: #fff;
+                 }
+                </style>
+                </defs>
+                <g id="グループ化_177" data-name="グループ化 177" transform="translate(-1979 -664)">
+                <path id="パス_459" data-name="パス 459" class="cls-1" d="M49.065,131.7H46.453v4.588H42.5V138.9h3.953v9.176h2.612V138.9h3.882v-2.612H49.065Z" transform="translate(-42.5 -129.794)"/>
+                <path id="パス_460" data-name="パス 460" class="cls-1" d="M62.006,129a1.807,1.807,0,0,0-1.341.565,1.928,1.928,0,0,0-.565,1.341,2.1,2.1,0,0,0,.565,1.412,1.971,1.971,0,0,0,1.412.565,1.807,1.807,0,0,0,1.341-.565,1.971,1.971,0,0,0,.565-1.412,1.807,1.807,0,0,0-.565-1.341A1.721,1.721,0,0,0,62.006,129Z" transform="translate(-47.676 -129)"/>
+                <rect id="長方形_279" data-name="長方形 279" class="cls-1" width="2.612" height="11.718" transform="translate(13.059 6.494)"/>
+                <path id="パス_461" data-name="パス 461" class="cls-1" d="M86.682,138.2a5.557,5.557,0,0,0-2.612.706V138.2H81.459v15.671a5.224,5.224,0,0,1-10.447,0v-5.929a5.341,5.341,0,0,0,2.612.706,5.224,5.224,0,1,0,0-10.447,5.558,5.558,0,0,0-2.612.706V138.2H68.4v15.671a7.835,7.835,0,1,0,15.671,0v-5.929a5.341,5.341,0,0,0,2.612.706,5.224,5.224,0,1,0,0-10.447Zm-13.059,2.612a2.612,2.612,0,1,1-2.612,2.612A2.652,2.652,0,0,1,73.624,140.812Zm13.059,5.224a2.612,2.612,0,1,1,2.612-2.612A2.606,2.606,0,0,1,86.682,146.035Z" transform="translate(-50.118 -131.706)"/>
+                <rect id="長方形_280" data-name="長方形 280" class="cls-1" width="2.612" height="11.718" transform="translate(44.4 6.494)"/>
+                <path id="パス_462" data-name="パス 462" class="cls-1" d="M106.406,129a1.807,1.807,0,0,0-1.341.565,1.928,1.928,0,0,0-.565,1.341,2.1,2.1,0,0,0,.565,1.412,1.971,1.971,0,0,0,1.412.565,1.807,1.807,0,0,0,1.341-.565,1.971,1.971,0,0,0,.565-1.412A1.929,1.929,0,0,0,106.406,129Z" transform="translate(-60.735 -129)"/>
+                <path id="パス_463" data-name="パス 463" class="cls-1" d="M123.247,143.424a4.753,4.753,0,0,0-1.553-3.671,5.126,5.126,0,0,0-3.671-1.553,4.682,4.682,0,0,0-2.612.706V138.2H112.8v11.718h2.612v-6.494h0a2.612,2.612,0,0,1,5.224,0h0v6.494h2.612v-6.494Z" transform="translate(-63.176 -131.706)"/>
+                </g>
+                </svg>
+                </div>
+</div>
+<div class="pageUser animated slideInUp">
+        <div class="avatar" align="center">             
+             <div id="exp" class="c100 ">
+                 <img src="https://data.tokyogirlsupdate.com/wp/wp-content/uploads/2014/12/img_MariyaNishiuchi1.jpg" />               
+                <div class="slice">
+                    <div class="bar">                       
+                    </div>
+                    <div class="fill">                      
+                    </div>                     
+                </div>
+            </div>
+        </div>    
+        <div class="follow">
+            <p><i>84 </i> フォロワー</p>
+            <p>|</p>
+            <p><i>134</i>フォロー</p>
+            <div class="nameLevel">
+                <h3>加藤花子</h3>
+                <h4>LV 100</h4>
+            </div>
+            <div class="newStatus">
+            <p>
+                プログラマー歴3年。趣味はサーフィン、食べ歩き。息子2人子育て中。2歳と6歳の元気な男の子です。波乱万丈な日々を奮闘しています.
+            </p> 
+        </div>
+        </div>
+    <div class="linkInfo">
+        <a href={{ path ("pageInfoUser")}}>プロフィールを編集</a> 
+    </div>
+          
+</div>
+ <div class="myTab" >
+  <button class="tablinks" onclick="openCity(event, 'newFeed')"><img src="./image/icon596.svg"></button>
+  <button class="tablinks" onclick="openCity(event, 'invite') "><img src="./image/icon592.svg"></button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')"><img src="./image/icon590.svg"></button>
+  <button class="tablinks" onclick="openCity(event, 'Message')"><img src="./image/icon190.svg"></button>
+  <button class="tablinks" onclick="openCity(event, 'Tippin')"><img src="./image/icon187.svg"></button>
+</div>
+<div id="newFeed" class="myTabcontent">
+<div class="newFeed">
+        <div class="newPost">
+        <div class="avatarUsers"> 
+            <img src="https://data.tokyogirlsupdate.com/wp/wp-content/uploads/2014/12/img_MariyaNishiuchi1.jpg" />
+
+        </div>
+        <div class="nameUserPost">
+                <h4>加藤花子</h4>
+                <p>LV 100</p>
+                <div class="timePost">
+                        <p style="font-weight: normal">1時間前</p>
+                </div>               
+        </div>
+        <div class="topToolPost">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"  viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+        <g xmlns="http://www.w3.org/2000/svg">
+            <circle cx="69.545" cy="306" r="69.545" fill="#a62224"/>
+            <circle cx="306" cy="306" r="69.545" fill="#a62224"/>
+            <circle cx="542.455" cy="306" r="69.545" fill="#a62224"/>
+        </g>
+    </svg>
+        </div>
+        <div class="captionPost">
+                        <a>フード＆ドリンク</a>
+                        <a>教育</a>
+                        <p>今日は土用の丑の日です!土用の丑の日と言えば、うなぎを食べるので有名ですよね。
+                        実際には土用丑の日は、 春夏秋冬４季にわたってあ…
+                        </p>
+                        <img src="https://uds.gnst.jp/rest/img/9r1xw5r40000/s_0028.jpg?t=1378034257" />
+        </div>
+        <div class="toolPost">
+            <img src="./image/tippin.svg" />
+            <p>989</p>
+            <img src="./image/comment.svg" />
+            <p>696</p>
+            <button onclick="myClick()" type="button" id="showModal">
+                <img src="./image/share.svg" />
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="mymodal-content">
+                <div class="myModal-body">
+                    <h5 id="exampleModalLabel">SHARE !</h5>
+                    <p><img src="./image/facebook.svg" />facebookでシェア</p>
+                    <p id="boderTwitter"><img src="./image/twitter.svg" />twitterでシェア</p>
+                </div>
+                <div class=" myModal-footer" align="center">
+                        <button type="button" data-dismiss="modal" >X</button>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="newPost">
+        <div class="avatarUsers"> 
+            <img src="https://data.tokyogirlsupdate.com/wp/wp-content/uploads/2014/12/img_MariyaNishiuchi1.jpg" />          
+        </div>
+        <div class="nameUserPost">
+                <h4>加藤花子</h4>
+                <p>LV 100</p>
+                <div class="timePost">
+                        <p style="font-weight: normal">1時間前</p>
+                </div>
+                
+        </div>
+        <div class="captionPost">
+                        <a>フード＆ドリンク</a>
+                        <a>教育</a>
+                        <p>今日は土用の丑の日です!土用の丑の日と言えば、うなぎを食べるので有名ですよね。
+                         実際には土用丑の日は、 春夏秋冬４季にわたってあ…
+                        </p>
+                        <img src="https://cdn.amanaimages.com/preview640/11020002688.jpg" />
+        </div>
+        </div>    
+</div>
+</div>
+</div>
+<div id="invite" class="myTabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+<div id="Tokyo" class="myTabcontent">
+</div>
+<div id="Message" class="myTabcontent">
+  <h3>Meesage</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+<div id="Tippin" class="myTabcontent">
+  <h3>Tippin</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+    {{ include ("security/menu-base.html.twig") }}     
+            <div class="modal fade" id="levelupModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="mymodal-content">
+                <div class="myModal-body" align="center">
+                    <h5 id="exampleModalLabel">LEVEL UP!</h5>
+                    <img src="./image/levelup.svg"/>
+                    <p id="exp">LV 15を達成しました！</p>
+                    <button>リワードを受け取り</button>
+                </div>
+                <div class=" myModal-footer" align="center">
+                        <button type="button" data-dismiss="modal" >X</button>
+                </div>
+                </div>
+                </div>
+            </div>
+<script>
+function myClick(){
+        $("#exampleModal").modal("show");
+}
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks,buhov;
+    if(cityName=="newFeed")
+    {
+        $("button:first").css("border-bottom","solid 0.5vw #a62224");
+    }
+    else
+    {       
+        $("button:first").css("border-bottom","none");
+    }
+    tabcontent = document.getElementsByClassName("myTabcontent");
+    buhov = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+function expUser()
+{
+    var number = 69 ;
+    var exp = "p" + number;
+    if(number == 100)
+    {
+        document.getElementById("exp").classList.add("p0");
+        $("#levelupModel").modal("show");
+    }
+    else
+    {
+        document.getElementById("exp").classList.add(exp);
+    }
+}
+window.onload = function() {
+    expUser();
+    openCity(event, 'newFeed');
+}
+</script>
+{% endblock %}    
