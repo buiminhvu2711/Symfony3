@@ -1,85 +1,111 @@
 #Tạo mảng, thêm vào mảng, xuất mảng, thay đổi lớp...Jquery
 <script>
 $(".btnhastag button").addClass("first-btnhastag");
-var arraytag = new Array();
-$(".btnhastag button").click(function ()
-{
-        var s = $(this).attr('class');       
-        var val =  $(this).val();
-        console.log("Giá trị truyền vào:"+val);
-        if(arraytag.length==3 )
-        {
-             if(s=="first-btnhastag")
-             {
-                    alert("最大3つまで");
-             }
-            else
-            {
-                var a = arraytag.pop();
-                console.log(a);   
-                $(this).toggleClass("first-btnhastag");
-                $(this).removeClass("hover-btnhastag");
-                console.log("trường hợp 3.2");
-            }
-            
-        }
-        else
-        {
-                if(s=="first-btnhastag")
-                {
-                        arraytag.push(val);
-                        $(this).toggleClass("hover-btnhastag");
-                        $(this).removeClass("first-btnhastag");
-                        console.log("trường hợp 2");
-                }
-                else
-                {                                            
-                        $(this).toggleClass("first-btnhastag");
-                        $(this).removeClass("hover-btnhastag");
-                        arraytag.splice($.inArray(val, arraytag),1);
-                        console.log("trường hợp 3.1");                 
-                }
-        }
-        console.log("Độ dài mới của mảng:"+arraytag.length);
-});
-$(".frame-send button").click(function() {
+                    var arraytag = new Array();
+                    $(".btnhastag button").click(function ()
+                    {
+                        var s = $(this).attr('class');
+                        var val = $(this).val();
+                        console.log("Giá trị truyền vào:" + val);
+                        if (arraytag.length == 3)
+                        {
+                            if (s == "first-btnhastag")
+                            {
+                                alert("最大3つまで");
+                            } else
+                            {
+                                var a = arraytag.pop();
+                                console.log(a);
+                                $(this).toggleClass("first-btnhastag");
+                                $(this).removeClass("hover-btnhastag");
+                                console.log("trường hợp 3.2");
+                            }
 
-    var count = $(".hashtag-added").length;
-    console.log(count);
-    if(count ==0 && arraytag.length>0)
-    {
-            for(var i=0;i<arraytag.length;i++)
-            {
-                var value= arraytag[i];
-                $("#item-hashadded").append("<div class='hashtag-added'><a>"+value+"</a><button>X</button></div>");
-            }
-            console.log("trường hợp 4");
-    }
-    else
-    {
-        if(arraytag.length==count && arraytag.length>0)
-        {
-                for(var i=0;i<arraytag.length;i++)
-                {
-                        var value= arraytag[i];
-                        $("#item-hashadded-2").append("<div class='hashtag-added'><a>"+value+"</a><button>X</button></div>");             
-                 }
-                  $("#item-hashadded-2").replaceAll("#item-hashadded");
-                  console.log("trường hợp 5");
-        }
-        else
-        {
-            $("#item-hashadded").remove();
-            $("#item-hashadded-2").remove();
-            $("#btnhashtag").before("<div id='item-hashadded' style='width: 100%'></div><div id='item-hashadded-2' style='width: 100%'></div>");
-            for(var i=0;i<arraytag.length;i++)
-            {
-                var value= arraytag[i];
-                $("#item-hashadded").append("<div class='hashtag-added'><a>"+value+"</a><button>X</button></div>");
-            }
-            console.log("trường hợp count và độ dài mảng không bằng nhau !");
-        }
-
-        
-    }    
+                        } else
+                        {
+                            if (s == "first-btnhastag")
+                            {
+                                arraytag.push(val);
+                                $(this).toggleClass("hover-btnhastag");
+                                $(this).removeClass("first-btnhastag");
+                                console.log("trường hợp 2");
+                            } else
+                            {
+                                $(this).toggleClass("first-btnhastag");
+                                $(this).removeClass("hover-btnhastag");
+                                arraytag.splice($.inArray(val, arraytag), 1);
+                                console.log("trường hợp 3.1");
+                            }
+                        }
+                        console.log("Độ dài mới của mảng:" + arraytag.length);
+                    });
+                    $(".frame-send button").click(function () {
+                        var count = $(".hashtag-added").length;
+                        console.log(count);
+                        if (count == 0 && arraytag.length > 0)
+                        {
+                            for (var i = 0; i < arraytag.length; i++)
+                            {
+                                var value = arraytag[i];
+                                
+                                $("#item-hashadded").append("<div class='hashtag-added'><a value="+value+">" + value + "</a><button value=" + value + ">X</button></div>");
+                            }
+                            $('.btnhastag button').addClass("first-btnhastag");
+                            $('.btnhastag button').removeClass("hover-btnhastag");
+                            arraytag = [];
+                            console.log("trường hợp 4");
+                        } else
+                        {
+                            if ($("#item-hashadded-2 .hashtag-added").length == 3)
+                            {
+                                $("#item-hashadded-2 .hashtag-added").remove();
+                            }
+                            if (arraytag.length == count && arraytag.length > 0)
+                            {
+                                for (var i = 0; i < arraytag.length; i++)
+                                {
+                                    var value = arraytag[i];
+                                    $("#item-hashadded").append("<div class='hashtag-added'><a value="+value+">" + value + "</a><button value=" + value + ">X</button></div>");
+                                }
+                                $("#item-hashadded-2").replaceAll("#item-hashadded");
+                                $('.btnhastag button').removeClass("hover-btnhastag");
+                                $('.btnhastag button').addClass("first-btnhastag");
+                                arraytag = [];
+                                console.log("trường hợp 5");
+                            } else
+                            {
+                                $("#item-hashadded").remove();
+                                $("#item-hashadded-2").remove();
+                                $("#btnhashtag").before("<div id='item-hashadded'></div><div id='item-hashadded-2'></div>");
+                                for (var i = 0; i < arraytag.length; i++)
+                                {
+                                    var value = arraytag[i];
+                                    $("#item-hashadded").append("<div class='hashtag-added'><a value="+value+">" + value + "</a><button value=" + value + ">X</button></div>");
+                                }
+                                $('.btnhastag button').removeClass("hover-btnhastag");
+                                $('.btnhastag button').addClass("first-btnhastag");
+                                arraytag = [];
+                                console.log("trường hợp count và độ dài mảng không bằng nhau !");
+                            }
+                        }
+                    });
+                    function myClick() {
+                        $("#listhastag").modal("show");
+                    }
+                    $(document).on("click",".hashtag-added button", function () {
+                        var c=document.getElementsByClassName("hashtag-added");
+                        console.log(c);
+                        var value=$(this).attr('value');
+                        console.log(value);
+                        for(var i=0;i<c.length;i++)
+                        {
+                                var a= $(c[i]).find('a').text();
+                                console.log(a);
+                                if(a==value)
+                                {
+                                   $(c[i]).remove();
+                                   break;
+                                }
+                        }
+                    }); 
 });
