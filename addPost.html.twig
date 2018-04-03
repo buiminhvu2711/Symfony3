@@ -67,14 +67,14 @@
                         var s = $(this).attr('class');
                         var val = $(this).val();
                         console.log("Giá trị truyền vào:" + val);
-                        if (arraytag.length == 3)
+                        if (arraytag.length == 3) //kiểm tra lớn hơn 3
                         {
-                            if (s == "first-btnhastag")
+                            if (s == "first-btnhastag") //kiểm tra xem có phải class đã chọn (nếu đã tồn tại 3 first-btnhastag)
                             {
                                 alert("最大3つまで");
                             } else
                             {
-                                var a = arraytag.pop();
+                                var a = arraytag.pop(); //lấy class ra và xóa khỏi mảng
                                 console.log(a);
                                 $(this).toggleClass("first-btnhastag");
                                 $(this).removeClass("hover-btnhastag");
@@ -83,13 +83,13 @@
 
                         } else
                         {
-                            if (s == "first-btnhastag")
+                            if (s == "first-btnhastag") //class chưa chọn thì thêm vào array và thay đổi class
                             {
                                 arraytag.push(val);
                                 $(this).toggleClass("hover-btnhastag");
                                 $(this).removeClass("first-btnhastag");
                                 console.log("trường hợp 2");
-                            } else
+                            } else //class đã chọn rồi thì thay đổi class về ban đầu ra xóa khỏi array
                             {
                                 $(this).toggleClass("first-btnhastag");
                                 $(this).removeClass("hover-btnhastag");
@@ -99,10 +99,10 @@
                         }
                         console.log("Độ dài mới của mảng:" + arraytag.length);
                     });
-                    $(".frame-send button").click(function () {
-                        var count = $(".hashtag-added").length;
+                    $(".frame-send button").click(function () { // xuất mảng đã chọn ra màn hình
+                        var count = $(".hashtag-added").length; // đếm class đã chọn xuất hiện trên màn hình
                         console.log(count);
-                        if (count == 0 && arraytag.length > 0)
+                        if (count == 0 && arraytag.length > 0) //kiểm tra xem có dữ liệu hay không (lần đầu xuất mảng)
                         {
                             for (var i = 0; i < arraytag.length; i++)
                             {
